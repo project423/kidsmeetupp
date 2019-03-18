@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
-from .models import Event
+from .models import Event, Child
 
 from django.views.generic import ListView
 
@@ -32,7 +32,8 @@ def about(request):
     return render(request, 'about.html')
 
 def profile(request):
-    return render(request, 'profile/profile.html')
+    childs = Child.objects.all()
+    return render(request, 'profile/profile.html',{'childs':childs})
 
 def events_index(request):
     events = Event.objects.all()

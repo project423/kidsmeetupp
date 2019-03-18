@@ -2,5 +2,14 @@
 {%block content%}
 
 <h1>Welcome to the profile page</h1>
+{% for event in events%}
 
-{%endblock%}
+
+
+            <span>{{childs.name}}</span>
+            <p>Description:{{childs.description}}</p>
+        
+    
+{% endfor %}
+
+{% endblock %}
