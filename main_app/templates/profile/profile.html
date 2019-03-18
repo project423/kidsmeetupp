@@ -1,13 +1,13 @@
 {%extends 'base.html'%}
 {%block content%}
 
-<h1>Welcome to the profile page</h1>
-{% for event in events%}
+<h1>Profile</h1>
+{% for child in childs%}
 
 
 
-            <span>{{childs.name}}</span>
-            <p>Description:{{childs.description}}</p>
+            <span>{{child.name}}</span>
+            <p>Description:{{child.description}}</p>
         
     
 {% endfor %}

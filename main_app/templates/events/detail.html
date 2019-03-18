@@ -3,19 +3,37 @@
 
 <h1>Details</h1>
 
-<a href="/events/{{event.id}}">
+
     <div class="card">
 
         <div class="card-body">
 
-            <span>{{event.name}}</span>
-            <p>Description:{{event.description}}</p>
-            <a href="{% url 'events_update' event.id%}">Edit</a>
-            <a href="{%url 'events_delete' event.id%}">Delete</a>
+            <span class = "details" >{{event.name}}</span>
+            <p class = "details" >Description:{{event.description}}</p>
+            <a href="{% url 'events_update' event.id%}" class="btn btn-warning">Edit</a>
+            <a href="{% url 'events_delete' event.id%}" class="btn btn-danger">Delete</a>
+            {% for child in event.child_set.all%}
+            
+            
+            
+            <span>{{child.name}}</span>
+            <p>Description:{{child.description}}</p>
+            
+            
+            {% endfor %}
+            <p style = "color: #27476e;">{{child.name}}</p>
+            <p style = "color:#27476e;">{{child.get_description_display}}</p>
+            <form action="{%url 'add_child' event.id%}" method="post">
+                {%csrf_token%}
+                {{child_form.as_p}}
+                <input type="submit" class="btn btn-primary" value="Add Child">
+            </form>
         </div>
-        
-    </div>
-</a>
+     </div>
+
+
+
+
 
 
 

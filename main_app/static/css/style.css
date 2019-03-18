@@ -3,6 +3,10 @@ body{
   color: #eaf8bf;
 }
 
+span{
+  color: #eaf8bf;
+}
+
 a{
   text-decoration: none;
 }
@@ -19,10 +23,20 @@ hr {
     margin: 1em 0;
     padding: 0; 
 }
+p{
+  color:#27476e;
+}
 
+.details{
+  color: #27476e
+}
 .navbar{
   background-color: #27476e;
   
+}
+
+.navbar-toggler-icon{
+  color: #eaf8bf
 }
 .navbar-nav li a{
   color: #eaf8bf
