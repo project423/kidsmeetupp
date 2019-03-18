@@ -6,11 +6,16 @@ from .models import Event
 
 from django.views.generic import ListView
 
+from django.views.generic.edit import CreateView
+
+class EventCreate(CreateView):
+    model = Event
+    fields = '__all__'
+    success_url = '/events/'
 
 
 
 
-# Create your views here.
 
 def home(request):
     return render(request, 'home.html')
