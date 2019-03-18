@@ -6,11 +6,19 @@ from .models import Event
 
 from django.views.generic import ListView
 
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 class EventCreate(CreateView):
     model = Event
     fields = '__all__'
+    success_url = '/events/'
+
+class EventUpdate(UpdateView):
+    model=Event
+    fields = '__all__'
+
+class EventDelete(DeleteView):
+    model=Event
     success_url = '/events/'
 
 

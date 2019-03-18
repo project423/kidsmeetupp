@@ -1,7 +1,7 @@
 {%extends 'base.html'%}
 {%block content%}
 
-<h1>Hello From Event Details</h1>
+<h1>Details</h1>
 
 <a href="/events/{{event.id}}">
     <div class="card">
@@ -10,6 +10,8 @@
 
             <span>{{event.name}}</span>
             <p>Description:{{event.description}}</p>
+            <a href="{% url 'events_update' event.id%}">Edit</a>
+            <a href="{%url 'events_delete' event.id%}">Delete</a>
         </div>
         
     </div>
